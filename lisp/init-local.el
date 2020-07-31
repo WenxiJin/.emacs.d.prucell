@@ -4,7 +4,7 @@
 
 (when (maybe-require-package 'counsel-gtags)
   (with-eval-after-load 'counsel-gtags
-    (define-key counsel-mode-map (kbd "C-.") 'counsel-gtags-dwim)))
+    (define-key counsel-mode-map (kbd "<f12>") 'counsel-gtags-dwim)))
 
 (add-hook 'java-mode-hook
           (function
