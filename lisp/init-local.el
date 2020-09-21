@@ -9,9 +9,10 @@
 (add-hook 'c++-mode-hook 'counsel-gtags-mode)
 (add-hook 'java-mode-hook 'counsel-gtags-mode)
 
-(when (maybe-require-package 'google-c-style)
-  (add-hook 'c-mode-hook 'google-set-c-style)
-  (add-hook 'c++-mode-hook 'google-set-c-style))
+;; (when (maybe-require-package 'google-c-style)
+;;   (add-hook 'c-mode-hook 'google-set-c-style)
+;;   (add-hook 'c++-mode-hook 'google-set-c-style)
+;;   )
 
 ;; java-mode
 (defun my/point-in-defun-declaration-p ()
@@ -101,7 +102,19 @@ Java Style Guide."
   (c-set-offset 'func-decl-cont        '++)
   )
 (add-hook 'java-mode-hook 'google-set-java-style)
+;; (add-hook 'c++-mode-hook 'google-set-java-style)
+(c-add-style "microsoft-style"
+             '("google-c-style"
+               (c-offsets-alist
+                (innamespace . -)
+                (inline-open . 0)
+                (inher.cont . c-lineup-multi-inher)
+                (arglist-cont-nonempty . +)
+                (template-args-cont . +))))
+(add-hook 'c++-mode-hook '(lambda ()
+                            (c-set-style "microsoft-style")
+                            (setq c-basic-offset 2)))
 
 
-(provide 'init-local)
+          (provide 'init-local)
 ;;; init-local.el ends here
