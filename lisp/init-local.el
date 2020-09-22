@@ -103,14 +103,19 @@ Java Style Guide."
   )
 (add-hook 'java-mode-hook 'google-set-java-style)
 ;; (add-hook 'c++-mode-hook 'google-set-java-style)
+
+
+(c-add-style "Google" google-c-style)
+;;; Based on google-c-style, custmise below
 (c-add-style "microsoft-style"
-             '("google-c-style"
+             '("Google"
                (c-offsets-alist
                 (innamespace . -)
                 (inline-open . 0)
                 (inher.cont . c-lineup-multi-inher)
                 (arglist-cont-nonempty . +)
-                (template-args-cont . +))))
+                (template-args-cont . +)
+                )))
 (add-hook 'c++-mode-hook '(lambda ()
                             (c-set-style "microsoft-style")
                             (setq c-basic-offset 2)))
