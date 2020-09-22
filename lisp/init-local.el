@@ -113,7 +113,7 @@ Java Style Guide."
                 (innamespace . -)
                 (inline-open . 0)
                 (inher.cont . c-lineup-multi-inher)
-                (arglist-cont-nonempty . +)
+                (arglist-cont-nonempty . 0)
                 (template-args-cont . +)
                 )))
 (add-hook 'c++-mode-hook '(lambda ()
