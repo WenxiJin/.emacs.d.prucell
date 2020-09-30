@@ -14,5 +14,14 @@
             (daemonp)))
   (exec-path-from-shell-initialize))
 
+(setenv "PATH"
+        (concat
+         (getenv "PATH")
+         "C:/cygwin64/usr/local/bin" ";"
+         "C:/cygwin64/usr/bin" ";"
+         "C:/cygwin64/bin" ";"
+         )
+        )
+
 (provide 'init-exec-path)
 ;;; init-exec-path.el ends here
