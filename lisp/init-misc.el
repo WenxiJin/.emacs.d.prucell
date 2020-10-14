@@ -48,6 +48,8 @@
 
 (add-auto-mode 'conf-mode "^Procfile\\'")
 
+(when (maybe-require-package 'undo-tree)
+  (global-undo-tree-mode))
 
 (provide 'init-misc)
 ;;; init-misc.el ends here
